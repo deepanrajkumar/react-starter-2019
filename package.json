@@ -1,0 +1,54 @@
+{
+  "name": "react-starter-2019",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/App.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepanrajkumar/react-starter-2019.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepanrajkumar/react-starter-2019/issues"
+  },
+  "homepage": "https://github.com/deepanrajkumar/react-starter-2019#readme",
+  "scripts": {
+    "clear-build-cache": "rm -rf .cache/ dist/",
+    "json-server": "json-server --watch config/db.json",
+    "dev": "parcel src/index.html",
+    "dev:mock": "cross-env PET_MOCK=mock parcel src/index.html",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.2.1",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "jest": "^24.9.0",
+    "json-server": "^0.15.0",
+    "prettier": "1.18.2",
+    "react-test-renderer": "^16.9.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.{js,jsx}?$": "babel-jest"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.1"
+  }
+}
