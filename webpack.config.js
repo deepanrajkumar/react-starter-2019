@@ -15,7 +15,11 @@ module.exports = {
   plugins: [
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template: "./static/index.html",
+      filename: "index.html",
+      inject: "body"
+    })
   ],
 
   module: {

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the app 1`] = `
+<div
+  className="new-world"
+>
+  !! Hello new world !!
+</div>
+`;
