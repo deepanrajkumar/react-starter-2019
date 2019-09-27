@@ -1,0 +1,5 @@
+{
+  "failOn": "critical",
+  "showCode": true,
+  "modules": ["files-contents", "files-secrets", "node-npmaudit", "node-npmoutdated", "node-yarnaudit", "node-yarnoutdated"]
+}

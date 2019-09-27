@@ -27,14 +27,10 @@
             "rules": [
               {
                 "test": "/.(js|jsx)$/",
-                "include": [
-                  "path.resolve(__dirname, 'src')"
-                ],
+                "include": ["path.resolve(__dirname, 'src')"],
                 "loader": "'babel-loader'",
                 "options": {
-                  "plugins": [
-                    "'syntax-dynamic-import'"
-                  ],
+                  "plugins": ["'syntax-dynamic-import'"],
                   "presets": [
                     [
                       "'@babel/preset-env'",
