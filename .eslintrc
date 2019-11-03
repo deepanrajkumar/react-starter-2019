@@ -7,13 +7,18 @@
     "prettier",
     "prettier/react"
   ],
+  "settings": {
+    "react": {
+      "version": "16.6.3"
+    }
+  },
   "rules": {
     "react/prop-types": 0,
-    "react-hooks/rules-of-hooks": "error",
-    "no-console": "warn"
+    "jsx-a11y/label-has-for": 0,
+    "no-console": 1
   },
+  "plugins": ["react", "import", "jsx-a11y"],
   "parser": "babel-eslint",
-  "plugins": ["react", "import", "jsx-a11y", "react-hooks"],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
@@ -24,11 +29,7 @@
   "env": {
     "es6": true,
     "browser": true,
-    "node": true
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
+    "node": true,
+    "jest": true
   }
 }
