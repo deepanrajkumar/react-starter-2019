@@ -30,8 +30,10 @@ class Main extends Component {
       <div>Loading....</div>
     ) : (
       <div>
-        <div className="new-world">!! Hello new world !!</div>
-        <pre>{JSON.stringify(response, null, 4)}</pre>
+        <h3 className="new-world">!! Hello world !!</h3>
+        <p>
+          <pre>{JSON.stringify(response, null, 4)}</pre>
+        </p>
       </div>
     );
   }

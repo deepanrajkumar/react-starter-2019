@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require("webpack");
 const DotEnv = require("dotenv-webpack");
 const path = require("path");
 
@@ -11,38 +12,49 @@ module.exports = {
     extensions: [".es6", ".js", ".jsx"],
     modules: ["node_modules"]
   },
+
   module: {
     rules: [
       {
-        test: /\.js$|\.es6|\.jsx$/,
+        enforce: "pre",
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"]
+        use: ["eslint-loader"]
       },
       {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: ["css-loader", "sass-loader"]
-        })
+        test: /.(js|jsx)$/,
+        include: [path.resolve(__dirname, "../src")],
+        exclude: /node_modules/,
+        loader: ["babel-loader"]
       },
       {
-        test: /\.(png|svg|jpg|gif|ico|jpeg)$/,
-        loader: "file-loader",
-        options: {
-          name: "assets/images/[name]-[hash].[ext]"
-        }
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ["file-loader"]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: ["file-loader"]
+      },
+      {
+        test: /\.(csv|tsv)$/,
+        use: ["csv-loader"]
+      },
+      {
+        test: /\.xml$/,
+        use: ["xml-loader"]
       }
     ]
   },
+
   plugins: [
     new DotEnv({
       path: path.resolve(__dirname, "..", ".env")
     }),
+    new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: "./static/index.html",
       filename: "index.html",
       inject: "body"
-    }),
-    new ExtractTextPlugin({ filename: "css/[name]-[hash].css" })
+    })
   ]
 };

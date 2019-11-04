@@ -10,6 +10,7 @@ module.exports = merge(common, {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
+    open: true,
     contentBase: "../dist",
     hot: true,
     port: 4000,
@@ -17,9 +18,23 @@ module.exports = merge(common, {
     disableHostCheck: true,
     historyApiFallback: true,
     proxy: {
-      "/mockData": "http://localhost:3000"
+      "/mockData": "http://0.0.0.0:3000"
     }
   },
+
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      }
+    ]
+  },
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
@@ -37,7 +52,7 @@ module.exports = merge(common, {
     ])
   ],
   output: {
-    filename: "js/[name]-bundle-[hash].js",
+    filename: "js/[name].js",
     path: path.resolve(__dirname, "../dist")
   }
 });
