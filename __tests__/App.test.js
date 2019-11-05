@@ -1,8 +1,8 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { shallow } from "enzyme";
 import App from "../src/App";
 
 test("should render the app", () => {
-  const main = renderer.create(<App />).toJSON();
+  const main = shallow.create(<App />).toJSON();
   expect(main).toMatchSnapshot();
 });
