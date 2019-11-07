@@ -27,19 +27,21 @@ class Main extends Component {
   render() {
     const { response, loading } = this.state;
     return loading ? (
-      <div>
-        Run the following script
-        <pre>
+      <div className="loader">
+        <h1>Run the following script</h1>
+        <pre className="align-center">
           <code>npm run json-server</code>
         </pre>
+        <h2 className="align-center">loading....</h2>
       </div>
     ) : (
       <div>
-        <h3 className="new-world">!! Hello world !!</h3>
-
-        <pre>
-          <code>{JSON.stringify(response, null, 4)}</code>
-        </pre>
+        <h1 className="new-world">!! Hello world !!</h1>
+        <div>
+          <pre className="align-center-block">
+            <code>{JSON.stringify(response, null, 4)}</code>
+          </pre>
+        </div>
       </div>
     );
   }

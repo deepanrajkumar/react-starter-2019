@@ -9,6 +9,40 @@
 }
 
 body {
-  background: lightskyblue;
+  background: #e4f0f0;
   font-family: "Satisfy-Regular";
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  color: chocolate;
+}
+
+h2 {
+  color: darkcyan;
+}
+
+.align-center {
+  text-align: center;
+  code {
+    font-size: 20px;
+  }
+}
+
+.align-center-block {
+  display: inline-block;
+  margin: 0 auto;
+  code {
+    font-size: 20px;
+  }
+}
+
+.loader {
+  background: url("./Images/loader.gif") 50% 50% no-repeat #e4f0f0;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  height: 100vh;
 }
